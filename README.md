@@ -1,5 +1,4 @@
-
-# # Server-Side is Dead! Long Live Server-Side (+ HTMX)
+# Server-Side is Dead! Long Live Server-Side (+ HTMX)
 
 This repository contains the example code and slides for the talk "Server-Side is Dead! Long Live Server-Side (+ HTMX)", given at DjangoCon US 2021
 
@@ -11,18 +10,25 @@ This repository contains the example code and slides for the talk "Server-Side i
 - [Slides](#slides)
 - [Resources](#resources)
 
-
 ## Examples
+
+Here are screenshots of the examples I talk through, transitioning from plain Django templates (plus a bit of ajax in the `settings` example), to Django + HTMX. The `examples` folder contains a django project with each of these examples.
 
 ### Messaging
 
+![Messages screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/messages_htmx.png)
+
 ### Settings
+
+![One-click settings screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/settings_htmx.png)
 
 ### Tabs-With-Forms
 
+![Tabbed forms screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/tabs_htmx.png)
 
 ## Slides
 
+Coming soon.
 
 ## Resources
 
