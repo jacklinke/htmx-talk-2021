@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>
+        Tabs (HTMX):
+    </h1>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Forms</h4>
+
+        <div 
+            id="tabs" 
+            data-hx-get="{% url 'tabs:form_one' %}" 
+            data-hx-trigger="load after:100ms" 
+            data-hx-target="#tabContent" 
+            data-hx-swap="innerHTML">
+        </div>
+
+        <div class="default-tab">
+            <ul class="nav nav-tabs mb-3" role="tablist">
+                <li class="nav-item">
+                    <a href="#"
+                        data-toggle="tab"
+                        role="tab"
+                        data-hx-get="{% url 'tabs:form_one' %}"
+                        data-hx-target="#tabContent"
+                        data-hx-swap="innerHTML"
+                        class="nav-link active">One
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        data-toggle="tab"
+                        role="tab"
+                        data-hx-get="{% url 'tabs:form_two' %}"
+                        data-hx-target="#tabContent"
+                        data-hx-swap="innerHTML"
+                        class="nav-link">Two
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        data-toggle="tab"
+                        role="tab"
+                        data-hx-get="{% url 'tabs:form_three' %}"
+                        data-hx-target="#tabContent"
+                        data-hx-swap="innerHTML"
+                        class="nav-link">Three
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        data-toggle="tab"
+                        role="tab"
+                        data-hx-get="{% url 'tabs:form_four' %}"
+                        data-hx-target="#tabContent"
+                        data-hx-swap="innerHTML"
+                        class="nav-link">Four
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#"
+                        data-toggle="tab"
+                        role="tab"
+                        data-hx-get="{% url 'tabs:form_five' %}"
+                        data-hx-target="#tabContent"
+                        data-hx-swap="innerHTML"
+                        class="nav-link">Five
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tabContent" role="tabpanel">
+                    Load...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

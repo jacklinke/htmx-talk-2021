@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>User Settings:</h1>
+    <hr>
+</div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_one == True %}checked{% endif %} 
+                name="set_value" 
+                id="setting_one">
+            <label class="form-check-label" for="setting_one">Setting One</label>
+            {% csrf_token %}
+        </form>
+        <div id="setting_one_response"></div>
+    </div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_two == True %}checked{% endif %} 
+                name="set_value" 
+                id="setting_two">
+            <label class="form-check-label" for="setting_two">Setting Two</label>
+            {% csrf_token %}
+        </form>
+        <div id="setting_two_response"></div>
+    </div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_three == True %}checked{% endif %} 
+                name="set_value" 
+                id="setting_three">
+            <label class="form-check-label" for="setting_three">Setting Three</label>
+            {% csrf_token %}
+        </form>
+        <div id="setting_three_response"></div>
+    </div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_four == True %}checked{% endif %} 
+                name="set_value" 
+                id="setting_four">
+            <label class="form-check-label" for="setting_four">Setting Four</label>
+            {% csrf_token %}
+        </form>
+        <div id="setting_four_response"></div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $("#setting_one").click(function(){
+            var csrfToken = $( "input[name='csrfmiddlewaretoken']");
+            $.ajax({
+                url: '{% url "users:settings" %}',
+                type: "POST",
+                dataType: "json",
+                data: {'settings':'setting_one', 'csrfmiddlewaretoken':csrfToken.val()},
+                cache: false
+            }).done(function(data) {
+                if (data.result === true){
+                    alert(data.message);
+                }
+            });
+        });
+
+        $("#setting_two").click(function(){
+            var csrfToken = $( "input[name='csrfmiddlewaretoken']");
+            $.ajax({
+                url: '{% url "users:settings" %}',
+                type: "POST",
+                dataType: "json",
+                data: {'settings':'setting_two', 'csrfmiddlewaretoken':csrfToken.val()},
+                cache: false
+            }).done(function(data) {
+                if (data.result === true){
+                    alert(data.message);
+                }
+            });
+        });
+
+        $("#setting_three").click(function(){
+            var csrfToken = $( "input[name='csrfmiddlewaretoken']");
+            $.ajax({
+                url: '{% url "users:settings" %}',
+                type: "POST",
+                dataType: "json",
+                data: {'settings':'setting_three', 'csrfmiddlewaretoken':csrfToken.val()},
+                cache: false
+            }).done(function(data) {
+                if (data.result === true){
+                    alert(data.message);
+                }
+            });
+        });
+
+        $("#setting_four").click(function(){
+            var csrfToken = $( "input[name='csrfmiddlewaretoken']");
+            $.ajax({
+                url: '{% url "users:settings" %}',
+                type: "POST",
+                dataType: "json",
+                data: {'settings':'setting_four', 'csrfmiddlewaretoken':csrfToken.val()},
+                cache: false
+            }).done(function(data) {
+                if (data.result === true){
+                    alert(data.message);
+                }
+            });
+        });
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+    </script>
+    
+
+{% endblock content %}

@@ -1,0 +1,173 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HTMX Demos</title>
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="/">
+                    <b class="logo-abbr"><div class="text-white">H</div></b>
+                    <span class="logo-compact"><div class="text-white">HTMX</div></span>
+                    <span class="brand-title">
+                        <div class="text-white">HTMX Demo</div>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Apps</li>
+                    <li>
+                        <a href="{% url 'messaging:inbox' %}" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Inbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'messaging:inbox_htmx' %}" aria-expanded="false">
+                            <i class="icon-envelope menu-icon text-success"></i><span class="nav-text">Inbox (HTMX)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'users:settings' %}" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Profile Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'users:settings_htmx' %}" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon text-success"></i><span class="nav-text">Profile Settings (HTMX)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'tabs:tabs_view' %}" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Tabbed Forms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'tabs:tabs_htmx_view' %}" aria-expanded="false">
+                            <i class="icon-note menu-icon text-success"></i><span class="nav-text">Tabbed Forms (HTMX)</span>
+                        </a>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="{% url 'messaging:inbox' %}" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Formsets</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'messaging:inbox' %}" aria-expanded="false">
+                            <i class="icon-note menu-icon text-success"></i><span class="nav-text">Formsets (HTMX)</span>
+                        </a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <!-- container -->
+            <div class="container-fluid">
+                {% block content %}
+
+                {% endblock content %}
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
+
+    <script src="https://unpkg.com/htmx.org@1.5.0/dist/htmx.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.8.1/dist/_hyperscript.js"></script>
+
+    <script>
+        // htmx csrf script
+        document.body.addEventListener('htmx:configRequest', (event) => {
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+        })
+
+        htmx.logAll();
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>Messages (HTMX):</h1>
+    <hr>
+</div>
+
+    {% for message in messages %}
+
+        {% include "messaging/fragments/message_fragment.html" %}
+
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+<div class="ml-4 {% if not message.read_at %} bg-light{% endif %}" id="li_list_{{ message.id }}">
+    {% if not message.read_at %}
+        <div class="pull-right">
+            <form method="POST">
+                <input type="hidden" name="item" value="{{ message.id }}">
+                <span 
+                    data-hx-post="{% url 'messaging:inbox_htmx' %}"
+                    data-hx-swap="outerHTML"
+                    data-hx-target="#li_list_{{ message.id }}"
+                    data-hx-include="[name='item']" 
+                    class="btn mb-1 ml-2 btn-rounded btn-outline-light" type="submit" title="Mark Read">
+                    <i class="icon-envelope-letter menu-icon text-warning"></i>
+                </span>
+            </form>
+        </div>
+    {% endif %}
+    <h2>{{ message.title }}</h2>
+    
+    <div class="ml-5 mt-2">
+        <div>
+            From: <i>{{ message.from_user }}</i>
+        </div>
+        <div>
+            {{ message.body }}
+        </div>
+    </div>
+    <hr>
+</div>

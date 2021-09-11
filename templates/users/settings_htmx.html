@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>User Settings (HTMX):</h1>
+    <hr>
+</div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_one == True %}checked{% endif %} 
+                name="set_value" 
+                id="setting_one" 
+                data-hx-post="{% url "users:settings_htmx" %}" 
+                data-hx-trigger="click" 
+                data-data-hx-include="[name='settings']" 
+                data-hx-target="#setting_one_response">
+            <label class="form-check-label" for="setting_one">Setting One</label>
+            <input type="hidden" name="settings" value="setting_one">
+        </form>
+        <div id="setting_one_response"></div>
+    </div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_two == True %}checked{% endif %} 
+                name="set_value" 
+                id="setting_two" 
+                data-hx-post="{% url "users:settings_htmx" %}" 
+                data-hx-trigger="click" 
+                data-data-hx-include="[name='settings']" 
+                data-hx-target="#setting_two_response">
+            <label class="form-check-label" for="setting_two">Setting Two</label>
+            <input type="hidden" name="settings" value="setting_two">
+        </form>
+        <div id="setting_two_response"></div>
+    </div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_three == True %}checked{% endif %} name="set_value" 
+                id="setting_three" 
+                data-hx-post="{% url "users:settings_htmx" %}" 
+                data-hx-trigger="click" 
+                data-data-hx-include="[name='settings']" 
+                data-hx-target="#setting_three_response">
+            <label class="form-check-label" for="setting_three">Setting Three</label>
+            <input type="hidden" name="settings" value="setting_three">
+        </form>
+        <div id="setting_three_response"></div>
+    </div>
+
+    <div class="custom-control custom-switch col-lg-3 mt-3 mb-1">
+        <form method="POST">
+            <input type="checkbox" 
+                class="form-check-input" 
+                {% if request.user.setting_four == True %}checked{% endif %} name="set_value" 
+                id="setting_four" 
+                data-hx-post="{% url "users:settings_htmx" %}" 
+                data-hx-trigger="click" 
+                data-data-hx-include="[name='settings']" 
+                data-hx-target="#setting_four_response">
+            <label class="form-check-label" for="setting_four">Setting Four</label>
+            <input type="hidden" name="settings" value="setting_four">
+        </form>
+        <div id="setting_four_response"></div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>Messages:</h1>
+    <hr>
+</div>
+
+    {% for message in messages %}
+
+        <div class="ml-4 {% if not message.read_at %} bg-light{% endif %}" id="li_list_{{ message.id }}">
+            {% if not message.read_at %}
+                <div class="pull-right">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="item" value="{{ message.id }}">
+                        <button 
+                            class="btn mb-1 ml-2 btn-rounded btn-outline-light" 
+                            type="submit" 
+                            title="Mark Read">
+                            <i class="icon-envelope-letter menu-icon text-warning"></i>
+                        </button>
+                    </form>
+                </div>
+            {% endif %}
+            <h2>{{ message.title }}</h2>
+            
+            <div class="ml-5 mt-2">
+                <div>
+                    From: <i>{{ message.from_user }}</i>
+                </div>
+                <div>
+                    {{ message.body }}
+                </div>
+            </div>
+            <hr>
+        </div>
+
+
+    {% endfor %}
+
+{% endblock content %}

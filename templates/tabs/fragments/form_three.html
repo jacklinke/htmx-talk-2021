@@ -1,0 +1,12 @@
+<div id="formDiv">
+    <h2>Form Three</h2>
+    <form enctype="multipart/form-data"
+        data-hx-post="{% url 'tabs:form_three' %}"
+        data-hx-target="#formDiv"
+        data-hx-swap="outerHTML">
+        <div>
+            {{ form_three.as_p }}
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>

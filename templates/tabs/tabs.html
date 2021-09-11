@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>
+        Tabs:
+    </h1>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Forms</h4>
+
+        <div class="default-tab">
+            <ul class="nav nav-tabs mb-3" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#one">One</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#two">Two</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#three">Three</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#four">Four</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#five">Five</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="one" role="tabpanel">
+                    <h2>Form One</h2>
+                    <div class="p-t-15">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form_one.as_p }}
+                            <input type="submit" value="Submit" name="submit_one">
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="two">
+                    <h2>Form Two</h2>
+                    <div class="p-t-15">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form_two.as_p }}
+                            <input type="submit" value="Submit" name="submit_two">
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="three">
+                    <h2>Form Three</h2>
+                    <div class="p-t-15">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form_three.as_p }}
+                            <input type="submit" value="Submit" name="submit_three">
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="four">
+                    <h2>Form Four</h2>
+                    <div class="p-t-15">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form_four.as_p }}
+                            <input type="submit" value="Submit" name="submit_four">
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="five">
+                    <h2>Form Five</h2>
+                    <div class="p-t-15">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form_five.as_p }}
+                            <input type="submit" value="Submit" name="submit_five">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
