@@ -1,6 +1,9 @@
 # Server-Side is Dead! Long Live Server-Side (+ HTMX)
 
-This repository contains the example code and slides for the talk "Server-Side is Dead! Long Live Server-Side (+ HTMX)", given at DjangoCon US 2021
+This repository contains the example code and slides for the talk "Server-Side is Dead! Long Live Server-Side (+ HTMX)", to be given at DjangoCon US 2021
+
+If you're seeing this and it is not yet October 22, 2021, I encourage you to [register for DjangoCon US 2021](https://2021.djangocon.us/) now.
+
 
 ## Contents
 - [Examples](#examples)
@@ -8,25 +11,38 @@ This repository contains the example code and slides for the talk "Server-Side i
 	- [One-click settings](#settings)
 	- [Multiple forms in multiple tabs](#tabs-with-forms)
 - [Slides](#slides)
+- [Video](#video)
 - [Resources](#resources)
 
 ## Examples
 
 Here are screenshots of the examples I talk through, transitioning from plain Django templates (plus a bit of ajax in the `settings` example), to Django + HTMX. The `examples` folder contains a django project with each of these examples.
 
+Keep in mind these examples are stripped to the absolute minimum in order to make the concepts I discuss in the talk as clear as possible, so the examples do not take security best practices into account. For instance, in the `settings` example, you would want to decorate the view with `@login_required`.
+
 ### Messaging
+
+How do you add the ability to click on an icon to archive messages, without having to refresh the entire page to see the changes? Here's an example.
 
 ![Messages screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/messages_htmx.png)
 
 ### Settings
 
+In this example, we allow the current user to change their settings via a set of checkboxes (which relate to BooleanField fields in the database) without refreshing the page. They also get a momentary alert of the update.
+
 ![One-click settings screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/settings_htmx.png)
 
 ### Tabs-With-Forms
 
+This example presents a use-case where multiple forms are needed on a single webpage, each hidden within its own tab. We use HTMX to load each tab's contents only when needed and to submit each form without needing a page refresh.
+
 ![Tabbed forms screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/tabs_htmx.png)
 
 ## Slides
+
+Coming soon.
+
+## Video
 
 Coming soon.
 
