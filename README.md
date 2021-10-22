@@ -47,7 +47,7 @@ Slides are available in the media folder. You can access them directly here:
 
 ## Video
 
-Coming soon.
+[Video on DjangoConUS 2021 YouTube Playlist](https://www.youtube.com/watch?v=t98bKdeUHsU&list=PL2NFhrDSOxgXnYlkheXeHSE6mTXaFhaaD)
 
 ## Resources
 
