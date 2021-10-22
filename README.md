@@ -40,7 +40,10 @@ This example presents a use-case where multiple forms are needed on a single web
 
 ## Slides
 
-Coming soon.
+Slides are available in the media folder. You can access them directly here:
+
+- [Download OpenDocument Presentation file](https://github.com/jacklinke/htmx-talk-2021/blob/master/media/Server-Side_is_Dead!_Long_Live_Server-Side_(+HTMX).odp?raw=true)
+- [View OpenDocument Flat XML Presentation file](https://github.com/jacklinke/htmx-talk-2021/blob/master/media/Server-Side_is_Dead!_Long_Live_Server-Side_(+HTMX).fodp?raw=true)
 
 ## Video
 
