@@ -54,6 +54,7 @@ Coming soon.
 Resources mentioned in the talk:
 
 - [htmx.org](https://htmx.org) - The home for HTMX examples, references, and further resources.
+- [django-htmx](https://github.com/adamchainz/django-htmx) - Adam Johnson's django package with helpful utilities for making integration of Django and HTMX easier.
 - [awesome-htmx](https://github.com/rajasegar/awesome-htmx) - Links to talks, blog posts, examples, and other things related to HTMX.
 - [HTMX Discord](https://htmx.org/discord) - Very active community board for discussing HTMX and Django + HTMX.
 - [r/htmx on Reddit](https://www.reddit.com/r/htmx/)
