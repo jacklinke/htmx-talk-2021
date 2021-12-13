@@ -1,6 +1,7 @@
 <div id="formDiv">
     <h2>Form Four</h2>
-    <form enctype="multipart/form-data"
+    <p><h3 class="text-info">{{ success }}</h3></p>
+    <form 
         data-hx-post="{% url 'tabs:form_four' %}"
         data-hx-target="#formDiv"
         data-hx-swap="outerHTML">

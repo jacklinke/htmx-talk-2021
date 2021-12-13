@@ -2,42 +2,22 @@ from django import forms
 
 from users.models import User
 
-class FormOne(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            "username",
-            "email",
-        ]
+class FormOne(forms.Form):
+    username = forms.CharField(max_length=100)
+    email = forms.EmailField(max_length=100)
 
-class FormTwo(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            "username",
-            "email",
-        ]
+class FormTwo(forms.Form):
+    username = forms.CharField(max_length=100)
+    email = forms.EmailField(max_length=100)
 
-class FormThree(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            "username",
-            "email",
-        ]
+class FormThree(forms.Form):
+    username = forms.CharField(max_length=100)
+    email = forms.EmailField(max_length=100)
 
-class FormFour(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            "username",
-            "email",
-        ]
+class FormFour(forms.Form):
+    username = forms.CharField(max_length=100)
+    email = forms.EmailField(max_length=100)
 
-class FormFive(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = [
-            "username",
-            "email",
-        ]
+class FormFive(forms.Form):
+    username = forms.CharField(max_length=100)
+    email = forms.EmailField(max_length=100)

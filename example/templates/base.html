@@ -11,6 +11,10 @@
     <title>HTMX Demos</title>
     <!-- Custom Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    {% block head %}
+    {% endblock head %}
+    
 </head>
 
 <body>
@@ -106,18 +110,16 @@
                             <i class="icon-note menu-icon text-success"></i><span class="nav-text">Tabbed Forms (HTMX)</span>
                         </a>
                     </li>
-                    <!--
                     <li>
-                        <a href="{% url 'messaging:inbox' %}" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Formsets</span>
+                        <a href="{% url 'maps:map' %}" aria-expanded="false">
+                            <i class="icon-note menu-icon text-success"></i><span class="nav-text">Maps</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{% url 'messaging:inbox' %}" aria-expanded="false">
-                            <i class="icon-note menu-icon text-success"></i><span class="nav-text">Formsets (HTMX)</span>
+                        <a href="{% url 'maps:map_htmx' %}" aria-expanded="false">
+                            <i class="icon-note menu-icon text-success"></i><span class="nav-text">Maps (HTMX)</span>
                         </a>
                     </li>
-                    -->
                 </ul>
             </div>
         </div>
@@ -156,8 +158,8 @@
     <script src="{% static 'js/gleek.js' %}"></script>
     <script src="{% static 'js/styleSwitcher.js' %}"></script>
 
-    <script src="https://unpkg.com/htmx.org@1.5.0/dist/htmx.js"></script>
-    <script src="https://unpkg.com/hyperscript.org@0.8.1/dist/_hyperscript.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.6.1/dist/htmx.js"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.1/dist/_hyperscript_web.min.js"></script>
 
     <script>
         // htmx csrf script

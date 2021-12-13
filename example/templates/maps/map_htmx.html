@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load leaflet_tags %}
+
+{% block head %}
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <style>
+        .leaflet-container {  /* all maps */
+            width:  100%;
+            height: 800px;
+        }
+    </style>
+    <script>
+        var dataurl = '{% url "maps:data" %}';
+
+        function layerOnClick() {
+            htmx.process(document.body);
+        }
+
+        window.addEventListener("map:init", function (event) {
+            var map = event.detail.map;
+            // Download GeoJSON data with Ajax
+            fetch(dataurl)
+            .then(function(resp) {
+                return resp.json();
+            })
+            .then(function(data) {
+                L.geoJson(data, {
+                onEachFeature: function onEachFeature(feature, layer) {
+                    var props = feature.properties;
+                    var content = `
+                        <div data-hx-get="/maps/${props.id}/" data-hx-trigger="load" data-hx-target="#data-div-${props.id}" data-hx-swap="outerHTML">
+                        </div>
+                        <div style="width: 600px" id="data-div-${props.id}"></div>
+                    `;
+                    layer.bindPopup(content);
+                    layer.on('click', layerOnClick);
+                }}).addTo(map);
+            });
+        });
+    </script>
+{% endblock head %}
+
+{% block content %}
+
+<div>
+    <h1>
+        Map (HTMX):
+    </h1>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Maps (Mushroom Sports</h4>
+
+        {% leaflet_map "main" %}
+
+    </div>
+</div>
+
+{% endblock content %}

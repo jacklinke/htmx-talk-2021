@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'leaflet',
+    'djgeojson',
     'users',
+    'maps',
     'messaging',
     'tabs',
-    'formsets',
 ]
 
 MIDDLEWARE = [
@@ -134,5 +136,9 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 ALLOWED_HOSTS = ['*']
 X_FRAME_OPTIONS = '*'
+
