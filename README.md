@@ -1,8 +1,6 @@
 # Server-Side is Dead! Long Live Server-Side (+ HTMX)
 
-This repository contains the example code and slides for the talk "Server-Side is Dead! Long Live Server-Side (+ HTMX)", to be given at DjangoCon US 2021
-
-If you're seeing this and it is not yet October 22, 2021, I encourage you to [register for DjangoCon US 2021](https://2021.djangocon.us/) now.
+This repository contains the example code and slides for the talk "Server-Side is Dead! Long Live Server-Side (+ HTMX)", given at DjangoCon US 2021 and then (modified) for Code Code Code in December of 2021.
 
 
 ## Contents
@@ -10,6 +8,7 @@ If you're seeing this and it is not yet October 22, 2021, I encourage you to [re
 	- [Messaging inbox functionality (read/archive)](#messaging)
 	- [One-click settings](#settings)
 	- [Multiple forms in multiple tabs](#tabs-with-forms)
+	- [Lazy data popovers](#lazy-data-popovers)
 - [Slides](#slides)
 - [Video](#video)
 - [Resources](#resources)
@@ -40,6 +39,12 @@ This example presents a use-case where multiple forms are needed on a single web
 
 ![Tabbed forms screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/tabs_htmx.png)
 
+### Maps with Lazy Data Popovers
+
+This example presents a use-case where a data-rich map (or datatable, etc) utilized popovers with additional information. Rather than loading all of the popover content on page load, we can load the popover contents lazily when the user clicks on the map feature.
+
+![Lazy Data Popovers screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/map_popovers_htmx.png)
+
 ## Slides
 
 Slides are available in the media folder. You can access them directly here:
@@ -50,6 +55,7 @@ Slides are available in the media folder. You can access them directly here:
 ## Video
 
 [Video on DjangoConUS 2021 YouTube Playlist](https://www.youtube.com/watch?v=t98bKdeUHsU&list=PL2NFhrDSOxgXnYlkheXeHSE6mTXaFhaaD)
+[Video on Code Code Code YouTube Playlist](https://youtu.be/MJQ9E1iap2Y)
 
 ## Resources
 
