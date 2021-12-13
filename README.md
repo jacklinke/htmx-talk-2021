@@ -20,6 +20,8 @@ Here are screenshots of the examples I talk through, transitioning from plain Dj
 
 Keep in mind these examples are stripped to the absolute minimum in order to make the concepts I discuss in the talk as clear as possible, so the examples do not take security best practices into account. For instance, in the `settings` example, you would want to decorate the view with `@login_required`.
 
+The example includes fixtures for getting up-and-running quickly. After migrating, loading fixtures, and starting runserver, log into admin (http://127.0.0.1:8000/admin/) with credentials `user` `pass`, and then go to the homepage (http://127.0.0.1:8000/).
+
 ### Messaging
 
 How do you add the ability to click on an icon to archive messages, without having to refresh the entire page to see the changes? Here's an example.
