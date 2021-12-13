@@ -8,7 +8,7 @@ This repository contains the example code and slides for the talk "Server-Side i
 	- [Messaging inbox functionality (read/archive)](#messaging)
 	- [One-click settings](#settings)
 	- [Multiple forms in multiple tabs](#tabs-with-forms)
-	- [Lazy data popovers](#lazy-data-popovers)
+	- [Lazy data popovers](#maps-with-lazy-data-popovers)
 - [Slides](#slides)
 - [Video](#video)
 - [Resources](#resources)
