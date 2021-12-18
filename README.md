@@ -45,6 +45,17 @@ This example presents a use-case where a data-rich map (or datatable, etc) utili
 
 ![Lazy Data Popovers screenshot](https://raw.githubusercontent.com/jacklinke/htmx-talk-2021/master/media/map_popovers_htmx.png)
 
+## Demonstration Project
+
+A demonstration project is provided with each pattern discussed in the talk.
+
+1. Install the requirements `pip install -r requirements.txt`
+2. Migrate `python manage.py migrate`
+3. Install fixtures `python manage.py loaddata fixtures.json`
+4. Run server `python manage.py runserver`
+5. Log into admin `http://127.0.0.1:8000/admin/` with credentials: `user` & `pass`
+6. Go to the home page `http://127.0.0.1:8000/` and use the navigation options to try out the various demonstrations. Hint: open your browser's development tools pane.
+
 ## Slides
 
 Slides are available in the media folder. You can access them directly here:
